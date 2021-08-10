@@ -27,4 +27,12 @@ public class Appointment {
     @ManyToOne
     @JoinColumn(name = "schedule_id")
     private Schedule schedule;
+
+    @ManyToOne
+    @JoinColumn(name = "status_id")
+    private AppointmentStatus status;
+
+    @ManyToOne
+    @JoinColumn(name = "rescheduled_appointment_id")
+    private Appointment rescheduledAppointment;
 }
