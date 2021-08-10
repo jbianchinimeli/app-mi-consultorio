@@ -22,8 +22,12 @@ public class AppointmentController {
         this.appointmentService = appointmentService;
     }
 
+    /** Creates an appointment for a patient and a physician with certain schedule
+     * @param appointment
+     * @return
+     */
     @PostMapping("/appointment")
-    public ResponseEntity<AppointmentResponseDTO> getPropertyInfo(
+    public ResponseEntity<AppointmentResponseDTO> createAppointment(
             @RequestBody @Valid AppointmentRequestDTO appointment) {
         return new ResponseEntity<>(appointmentService.scheduleAppointment(appointment), HttpStatus.OK);
     }
